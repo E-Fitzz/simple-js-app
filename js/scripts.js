@@ -47,12 +47,12 @@ let pokemonRepository = (function(){
       {
           name: 'Charizard',
           height: '5.7',
-          type: ['fire', 'flying']
+          type: ['fire', ' flying']
       },
       {
           name: 'Geodude',
           height: '1.4',
-          type: ['rock', 'ground']
+          type: ['rock', ' ground']
       },
       {
           name: 'Diglet',
@@ -73,3 +73,7 @@ return {
 })();
 
 console.log(pokemonRepository.getAll());
+
+pokemonRepository.getAll().forEach(function(pokemon) {
+  console.log(pokemon.name + ' - height: ' + pokemon.height + ' - type: ' + pokemon.type);
+});
