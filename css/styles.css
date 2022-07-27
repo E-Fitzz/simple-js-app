@@ -1,32 +1,37 @@
 body {
     background-color: rgb(228, 227, 225);
+    margin: 0;
 }
 
 h1 {
     text-align: center;
     font-size: 50px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    padding-bottom: 20px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
     font-weight: bolder;
     border-bottom: 1px solid rgb(0, 0, 0, 0.4);
 }
 
 .button-class {
     border: none;
-    padding: 16px 32px;
+    padding: 16px 30px 16px 30px;
     text-align: center;
-    display: inline-block;
+    display: block;
+    margin: auto;
+    margin-bottom: 3px;
     font-size: 18px;
     font-weight: bold;
-    margin: 6px;
-    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.25s;
+         -o-transition-duration: 0.25s;
+            transition-duration: 0.25s;
     cursor: pointer;
     background-color: white;
     color: black;
     border: 4px solid #006289;
-    width: 95%;
-    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.4);
+    width: 90%;
+    -webkit-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.4);
+            box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.4);
     border-radius: 7px;
     -webkit-transition-duration: 0.3s;
     text-transform: capitalize;
@@ -40,9 +45,85 @@ h1 {
 }
 
 .pokemon-list {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     list-style: none;
-    padding: 10px 10px;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 5px 1fr;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
     margin: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+} 
+
+#modal-container {
+    display: none;
+    position: relative;
+    padding-top: 50px;
+  }
+  
+#modal-container.is-visible {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: block;
+  text-align: center;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  background: #fff;
+  width: 75%;
+  text-transform: capitalize;
+  border-radius: 15px;
+  border: 10px solid #006289;
+}
+
+.modal p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.modal h1 {
+    text-align: center;
+    margin: auto;
+    padding: 5px 0px 5px 0px;
+    font-size: 35px;
+}
+
+.modal img {
+    display: block;
+    margin: auto;
+    width: 40%;
+    margin-bottom: 0px;
+}
+
+.modal-close {
+    float: right;
+    margin-left: -50%;
+    margin-right: 0px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    border-color: #fff;
+    background-color: #fff;
+    font-weight: 900;
+}
+
+.modal-close:hover {
+    color: rgb(221, 2, 2);
+}
+
+@media all and (max-width: 500px) {
+  .button-pokemon-list {
+    width: 50%;
+  }
 }
